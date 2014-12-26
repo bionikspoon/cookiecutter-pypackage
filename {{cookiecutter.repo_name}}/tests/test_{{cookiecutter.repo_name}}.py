@@ -20,3 +20,4 @@ def {{ cookiecutter.repo_name }}():
 def test_{{ cookiecutter.repo_name }}_properly_mocked({{ cookiecutter.repo_name }}):
 
     assert str({{ cookiecutter.repo_name }}) == "Success"
+    
