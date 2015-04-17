@@ -26,7 +26,10 @@
 
 {{ cookiecutter.project_short_description}}
 
+<<<<<<< 3897239be96d33c059a291bc7a443dbfa34b3909
 * Free software: MIT license
+=======
+>>>>>>> license: switch to ISC license
 * Documentation: https://{{ cookiecutter.repo_name }}.readthedocs.org.
 
 Features
