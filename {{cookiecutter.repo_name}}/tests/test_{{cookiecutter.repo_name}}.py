@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# coding=utf-8
 
 """
 test_{{ cookiecutter.repo_name }}
@@ -7,22 +7,16 @@ test_{{ cookiecutter.repo_name }}
 
 Tests for `{{ cookiecutter.repo_name }}` module.
 """
-
-import unittest
-
-from {{ cookiecutter.repo_name }} import {{ cookiecutter.repo_name }}
+import pytest
 
 
-class Test{{ cookiecutter.repo_name|capitalize }}(unittest.TestCase):
+@pytest.fixture
+def {{ cookiecutter.repo_name }}():
+    from {{cookiecutter.repo_name}} import {{cookiecutter.repo_name}}
 
-    def setUp(self):
-        pass
+    mock_{{ cookiecutter.repo_name }} = {{ cookiecutter.repo_name }}()
+    return mock_{{ cookiecutter.repo_name }}
 
-    def test_something(self):
-        pass
+def test_{{ cookiecutter.repo_name }}_properly_mocked({{ cookiecutter.repo_name }}):
 
-    def tearDown(self):
-        pass
-
-if __name__ == '__main__':
-    unittest.main()
+    assert {{ cookiecutter.repo_name }} is False

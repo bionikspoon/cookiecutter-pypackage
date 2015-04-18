@@ -1,16 +1,23 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 
 python:
-  - "3.4"
-  - "3.3"
   - "2.7"
-  - "2.6"
-  - "pypy"
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -r requirements.txt
+install:
+  - pip install tox --use-mirrors
+  - pip install coveralls
 
-# command to run tests, e.g. python setup.py test
-script: python setup.py test
+env:
+  - TOXENV=py26
+  - TOXENV=py27
+  - TOXENV=py32
+  - TOXENV=py33
+  - TOXENV=py34
+  - TOXENV=pypy
+
+script:
+  - tox -e $TOXENV
+  - coverage run --source={{ cookiecutter.repo_name }} setup.py test
+
+after_success:
+  - coveralls
