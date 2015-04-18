@@ -5,6 +5,7 @@ cookiecutter-pypackage
 .. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
 
+<<<<<<< 9c45e2f33be4937fb16852477f85ea4ea6fa2f94
 Cookiecutter_ template for a Python package.
 
 * GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
@@ -14,20 +15,30 @@ Features
 --------
 
 * Vanilla testing setup with `unittest` and `python setup.py test`
+=======
+* Free software: MIT license
+* Vanilla testing setup with ``pytest`` and `python setup.py test`
+>>>>>>> customized cookie cutter
 * Travis-CI_: Ready for Travis Continuous Integration testing
 * Tox_ testing: Setup to easily test for Python 2.6, 2.7, 3.3, 3.4, 3.5
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
+<<<<<<< 9c45e2f33be4937fb16852477f85ea4ea6fa2f94
 * Bumpversion: Pre-configured version bumping with a single command
 * Auto-release to PyPI when you push a new tag to master (optional)
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+=======
+* Works with ``git flow``
+* Improved layout for syncing index and readme.  DRY.
+
+>>>>>>> customized cookie cutter
 
 Quickstart
 ----------
 
 Generate a Python package project::
 
-    cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
+    cookiecutter https://github.com/bionikspoon/cookiecutter-pypackage.git
 
 Then:
 

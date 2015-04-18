@@ -72,7 +72,8 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 
 4. Create a branch for local development::
 
-    $ git checkout -b name-of-your-bugfix-or-feature
+    $ git checkout -b feature/name-of-your-feature
+    $ git checkout -b fix/name-of-your-bugfix
 
    Now you can make your changes locally.
 
@@ -110,4 +111,4 @@ Tips
 
 To run a subset of tests::
 
-    $ python -m unittest tests.test_{{ cookiecutter.project_slug }}
+    $ py.test tests/test_{{ cookiecutter.project_slug  }}

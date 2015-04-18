@@ -61,3 +61,4 @@ target/
 # Cookiecutter
 output/
 boilerplate/
+.idea/
