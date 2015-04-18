@@ -4,6 +4,7 @@
 *.so
 
 # Packages
+.eggs/
 *.egg
 *.egg-info
 dist
@@ -40,4 +41,7 @@ output/*.html
 output/*/index.html
 
 # Sphinx
-docs/build
+docs/build/
+
+# Pycharm
+.idea/

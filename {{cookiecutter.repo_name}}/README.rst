@@ -6,11 +6,22 @@
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: Development Status
 
-.. image:: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg
-        :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
+.. image:: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg?branch=develop
+    :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}?branch=develop
+    :alt: Build Status
 
-.. image:: https://pypip.in/version/{{ cookiecutter.repo_name }}.svg
-        :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}
+.. image:: https://pypip.in/version/{{ cookiecutter.repo_name }}/badge.svg
+    :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}
+    :alt: Latest Version
+
+.. image:: https://coveralls.io/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/badge.svg?branch=develop
+    :target: https://coveralls.io/r/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}?branch=develop
+    :alt: Coverage Status
+
+.. image:: https://readthedocs.org/projects/{{ cookiecutter.repo_name }}/badge/?version=develop
+    :target: https://readthedocs.org/projects/{{ cookiecutter.repo_name }}/?badge=develop
+    :alt: Documentation Status
+
 
 
 {{ cookiecutter.project_short_description}}
