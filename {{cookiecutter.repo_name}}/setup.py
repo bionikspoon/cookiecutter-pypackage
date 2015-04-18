@@ -61,8 +61,8 @@ setup(
     long_description=readme + '\n\n' + __doc__ + '\n\n' + history,,
     author="{{ cookiecutter.full_name }}",
     author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ '
-        'cookiecutter.repo_name }}',
+    url='https://github.com/{{ cookiecutter.github_username }}'
+        '/{{ cookiecutter.repo_name }}',
     packages=[
         '{{ cookiecutter.repo_name }}',
     ],
