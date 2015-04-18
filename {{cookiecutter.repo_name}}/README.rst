@@ -14,7 +14,7 @@
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}
     :alt: Latest Version
 
-.. image:: https://coveralls.io/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/badge.svg?branch=develop
+.. image:: https://coveralls.io/repos/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/badge.svg?branch=develop
     :target: https://coveralls.io/r/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}?branch=develop
     :alt: Coverage Status
 

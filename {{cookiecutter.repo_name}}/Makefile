@@ -44,7 +44,6 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source {{ cookiecutter.repo_name }} setup.py test
 	coverage report -m
 	coverage html
 	xdg-open htmlcov/index.html
