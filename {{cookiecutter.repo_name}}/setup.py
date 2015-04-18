@@ -38,7 +38,7 @@ class PyTest(TestCommand):
 
 
 _version_re = re.compile(r"(?<=^__version__ = \')[\w\.]+(?=\'$)", re.U | re.M)
-with open('json_config/__init__.py', 'rb') as f:
+with open('{{ cookiecutter.repo_name }}/__init__.py', 'rb') as f:
     version = _version_re.search(f.read().decode('utf-8')).group()
 
 with open('README.rst') as readme_file:
@@ -58,7 +58,7 @@ setup(
     name='{{ cookiecutter.repo_name }}',
     version=version,
     description="{{ cookiecutter.project_short_description }}",
-    long_description=readme + '\n\n' + __doc__ + '\n\n' + history,,
+    long_description=readme + '\n\n' + __doc__ + '\n\n' + history,
     author="{{ cookiecutter.full_name }}",
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}'
@@ -75,7 +75,7 @@ setup(
     cmdclass={'test': PyTest},
     keywords='{{ cookiecutter.repo_name }}',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
@@ -83,6 +83,7 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
     ],
