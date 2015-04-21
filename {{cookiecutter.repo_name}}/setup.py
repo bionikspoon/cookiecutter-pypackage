@@ -73,7 +73,7 @@ setup(
     license="MIT",
     zip_safe=False,
     cmdclass={'test': PyTest},
-    keywords='{{ cookiecutter.repo_name }}',
+    keywords='{{ cookiecutter.repo_name }} {{ cookiecutter.full_name }}',
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',

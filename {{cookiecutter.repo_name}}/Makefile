@@ -50,12 +50,12 @@ coverage:
 	$(MAKE) -C docs coverage
 
 docs:
-	rm -f docs/{{ cookiecutter.repo_name }}.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ {{ cookiecutter.repo_name }}
+	rm -f docs/source/{{ cookiecutter.repo_name }}.rst
+	rm -f docs/source/modules.rst
+	sphinx-apidoc -o docs/source/ {{ cookiecutter.repo_name }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
-	xdg-open docs/_build/html/index.html
+	xdg-open docs/build/html/index.html
 
 release: clean
 	python setup.py register
