@@ -4,9 +4,7 @@ History
 
 Next Release
 ------------
-* Feature: ... TODO
-* Feature: ... TODO
-* Fix: ... TODO
+* TODO
 
 {{ cookiecutter.version }} ({{ cookiecutter.release_date }})
 ------------------

@@ -71,7 +71,8 @@ setup(
     install_requires=requirements,
     license="ISCL",
     zip_safe=False,
-    keywords='{{ cookiecutter.project_slug }}',
+    cmdclass={'test': PyTest},
+    keywords='{{ cookiecutter.project_slug }} {{ cookiecutter.full_name }}',
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
