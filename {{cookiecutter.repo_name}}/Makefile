@@ -47,7 +47,7 @@ test-all:
 coverage:
 	coverage report -m
 	coverage html
-	xdg-open htmlcov/index.html
+	python -m webbrowser htmlcov/index.html
 	$(MAKE) -C docs coverage
 
 docs:
@@ -56,7 +56,7 @@ docs:
 	sphinx-apidoc  --no-toc --no-headings --private --module-first -o docs/source/ {{ cookiecutter.repo_name }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
-	xdg-open docs/build/html/index.html
+	python -m webbrowser docs/_build/html/index.html
 
 release: clean register
 	python setup.py sdist upload
