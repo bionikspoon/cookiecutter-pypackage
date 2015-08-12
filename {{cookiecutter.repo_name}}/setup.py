@@ -70,22 +70,14 @@ setup(
                  '{{ cookiecutter.repo_name }}'},
     include_package_data=True,
     install_requires=requirements,
-<<<<<<< 3897239be96d33c059a291bc7a443dbfa34b3909
     license="MIT",
-=======
-    license="ISCL",
->>>>>>> license: switch to ISC license
     zip_safe=False,
     cmdclass={'test': PyTest},
     keywords='{{ cookiecutter.repo_name }} {{ cookiecutter.full_name }}',
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
-<<<<<<< 3897239be96d33c059a291bc7a443dbfa34b3909
         'License :: OSI Approved :: MIT License',
-=======
-        'License :: OSI Approved :: ISC License (ISCL)',
->>>>>>> license: switch to ISC license
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.6',
