@@ -1,3 +1,4 @@
 pytest
-wheel
 mock
+bumpversion==0.5.3
+wheel==0.23.0
