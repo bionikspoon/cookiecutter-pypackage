@@ -15,6 +15,7 @@ Cookiecutter template for a Python package. See https://github.com/audreyr/cooki
 * Works with ``git flow``
 * Improved layout for syncing index and readme.  DRY.
 
+* Bumpversion: Pre-configured version bumping with a single command
 
 Usage
 -----
