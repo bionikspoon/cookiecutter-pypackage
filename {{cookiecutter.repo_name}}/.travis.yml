@@ -3,8 +3,9 @@ language: python
 python:
   - "2.7"
 
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
-  - pip install tox --use-mirrors
+  - pip install -U tox --use-mirrors
   - pip install coveralls
 
 env:
@@ -15,9 +16,21 @@ env:
   - TOXENV=py34
   - TOXENV=pypy
 
+# command to run tests, e.g. python setup.py test
 script:
   - tox -e $TOXENV
   - coverage run --source={{ cookiecutter.repo_name }} setup.py test
 
 after_success:
   - coveralls
+
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: {{ cookiecutter.pypi_username }}
+  password:
+    secure: PLEASE_REPLACE_ME
+  on:
+    tags: true
+    repo: {{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
+    condition: $TOXENV == py27
