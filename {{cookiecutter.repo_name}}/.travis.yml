@@ -24,6 +24,7 @@ script:
 after_success:
   - coveralls
 
+# delete this section if you don't want automated PyPI deployment via Travis
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
