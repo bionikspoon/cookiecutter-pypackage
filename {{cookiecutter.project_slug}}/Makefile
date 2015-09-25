@@ -72,7 +72,10 @@ servedocs: docs
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 	$(BROWSER) docs/_build/html/index.html
 
-release: clean register
+servedocs: docs
+	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
+
+release: clean
 	python setup.py sdist upload
 	python setup.py bdist_wheel upload
 
