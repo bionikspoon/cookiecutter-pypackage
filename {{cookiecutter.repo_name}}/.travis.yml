@@ -27,7 +27,7 @@ script:
 after_success:
   - coveralls
 
-{% if cookiecutter.use_pypi_deployment_with_travis != 'n' -%}
+{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
 # After you create the Github repo and add it to Travis, run the
 # travis_pypi_setup.py script to finish PyPI deployment setup
 deploy:
