@@ -4,7 +4,7 @@
 Documentation
 -------------
 
-The full documentation is at https://{{ cookiecutter.repo_name }}.readthedocs.org.
+The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org.
 """
 
 import os
@@ -38,7 +38,7 @@ class PyTest(TestCommand):
 
 
 _version_re = re.compile(r"(?<=^__version__ = \')[\w\.]+(?=\'$)", re.U | re.M)
-with open('{{ cookiecutter.repo_name }}/__init__.py', 'rb') as f:
+with open('{{ cookiecutter.project_slug }}/__init__.py', 'rb') as f:
     version = _version_re.search(f.read().decode('utf-8')).group()
 
 with open('README.rst') as readme_file:
