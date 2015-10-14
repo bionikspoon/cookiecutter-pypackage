@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# coding=utf-8
 
 """
 test_{{ cookiecutter.project_slug }}
@@ -7,24 +7,15 @@ test_{{ cookiecutter.project_slug }}
 
 Tests for `{{ cookiecutter.project_slug }}` module.
 """
-
-import unittest
-
-from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
+import pytest
 
 
-class Test{{ cookiecutter.project_slug|capitalize }}(unittest.TestCase):
+@pytest.fixture
+def {{ cookiecutter.project_slug }}():
+    from {{cookiecutter.project_slug}} import {{cookiecutter.project_slug}}
 
-    def setUp(self):
-        pass
+    mock_{{ cookiecutter.project_slug }} = {{ cookiecutter.project_slug }}()
+    return mock_{{ cookiecutter.project_slug }}
 
-    def tearDown(self):
-        pass
-
-    def test_000_something(self):
-        pass
-
-
-if __name__ == '__main__':
-    import sys
-    sys.exit(unittest.main())
+def test_{{ cookiecutter.project_slug }}_properly_mocked({{ cookiecutter.project_slug }}):
+    assert str({{ cookiecutter.project_slug }}) == "Success"

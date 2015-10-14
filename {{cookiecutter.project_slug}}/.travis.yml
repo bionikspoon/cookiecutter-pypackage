@@ -3,19 +3,29 @@
 
 language: python
 
-env:
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py33
-  - TOXENV=py27
-  - TOXENV=py26
-  - TOXENV=pypy
+python:
+  - "2.7"
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox
+install:
+  - pip install -U tox --use-mirrors
+  - pip install coveralls
+
+env:
+  - TOXENV=py26
+  - TOXENV=py27
+  - TOXENV=py32
+  - TOXENV=py33
+  - TOXENV=py34
+  - TOXENV=pypy
 
 # command to run tests, e.g. python setup.py test
-script: tox
+script:
+  - tox -e $TOXENV
+  - coverage run --source={{ cookiecutter.repo_name }} setup.py test
+
+after_success:
+  - coveralls
 
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
 # After you create the Github repo and add it to Travis, run the
