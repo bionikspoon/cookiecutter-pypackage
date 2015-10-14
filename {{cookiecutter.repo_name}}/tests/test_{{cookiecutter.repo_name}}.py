@@ -2,21 +2,20 @@
 # coding=utf-8
 
 """
-test_{{ cookiecutter.repo_name }}
+test_{{ cookiecutter.project_slug }}
 ----------------------------------
 
-Tests for ``{{ cookiecutter.repo_name }}`` module.
+Tests for `{{ cookiecutter.project_slug }}` module.
 """
 import pytest
 
 
 @pytest.fixture
-def {{ cookiecutter.repo_name }}():
-    from {{cookiecutter.repo_name}} import {{cookiecutter.repo_name}}
+def {{ cookiecutter.project_slug }}():
+    from {{cookiecutter.project_slug}} import {{cookiecutter.project_slug}}
 
-    mock_{{ cookiecutter.repo_name }} = {{ cookiecutter.repo_name }}()
-    return mock_{{ cookiecutter.repo_name }}
+    mock_{{ cookiecutter.project_slug }} = {{ cookiecutter.project_slug }}()
+    return mock_{{ cookiecutter.project_slug }}
 
-def test_{{ cookiecutter.repo_name }}_properly_mocked({{ cookiecutter.repo_name }}):
-
-    assert str({{ cookiecutter.repo_name }}) == "Success"
+def test_{{ cookiecutter.project_slug }}_properly_mocked({{ cookiecutter.project_slug }}):
+    assert str({{ cookiecutter.project_slug }}) == "Success"

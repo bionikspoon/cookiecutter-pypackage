@@ -47,7 +47,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 {{ cookiecutter.repo_name }} tests
+	flake8 {{ cookiecutter.project_slug }} tests
 
 test:
 	python setup.py test
@@ -56,15 +56,16 @@ test-all:
 	tox
 
 coverage:
+	coverage run --source {{ cookiecutter.project_slug }} setup.py test
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
 	$(MAKE) -C docs coverage
 
 docs:
-	rm -f docs/source/{{ cookiecutter.repo_name }}.rst
+	rm -f docs/source/{{ cookiecutter.project_slug }}.rst
 	rm -f docs/source/modules.rst
-	sphinx-apidoc  --no-toc --no-headings --private --module-first -o docs/source/ {{ cookiecutter.repo_name }}
+	sphinx-apidoc  --no-toc --no-headings --private --module-first -o docs/source/ {{ cookiecutter.project_slug }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html

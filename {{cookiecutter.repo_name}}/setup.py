@@ -4,7 +4,7 @@
 Documentation
 -------------
 
-The full documentation is at https://{{ cookiecutter.repo_name }}.readthedocs.org.
+The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org.
 """
 
 import os
@@ -38,7 +38,7 @@ class PyTest(TestCommand):
 
 
 _version_re = re.compile(r"(?<=^__version__ = \')[\w\.]+(?=\'$)", re.U | re.M)
-with open('{{ cookiecutter.repo_name }}/__init__.py', 'rb') as f:
+with open('{{ cookiecutter.project_slug }}/__init__.py', 'rb') as f:
     version = _version_re.search(f.read().decode('utf-8')).group()
 
 with open('README.rst') as readme_file:
@@ -55,25 +55,24 @@ test_requirements = ['pytest', 'mock']
 
 # @:off
 setup(
-    name='{{ cookiecutter.repo_name }}',
-    version=version,
+    name='{{ cookiecutter.project_slug }}',
+    version='{{ cookiecutter.version }}',
     description="{{ cookiecutter.project_short_description }}",
     long_description=readme + '\n\n' + __doc__ + '\n\n' + history,
     author="{{ cookiecutter.full_name }}",
     author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}'
-        '/{{ cookiecutter.repo_name }}',
+    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
     packages=[
-        '{{ cookiecutter.repo_name }}',
+        '{{ cookiecutter.project_slug }}',
     ],
-    package_dir={'{{ cookiecutter.repo_name }}':
-                 '{{ cookiecutter.repo_name }}'},
+    package_dir={'{{ cookiecutter.project_slug }}':
+                 '{{ cookiecutter.project_slug }}'},
     include_package_data=True,
     install_requires=requirements,
     license="MIT",
     zip_safe=False,
     cmdclass={'test': PyTest},
-    keywords='{{ cookiecutter.repo_name }} {{ cookiecutter.full_name }}',
+    keywords='{{ cookiecutter.project_slug }} {{ cookiecutter.full_name }}',
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
