@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
 """
-{{ cookiecutter.repo_name }}
+{{ cookiecutter.project_slug }}
 """
 
-class {{ cookiecutter.repo_name }}(object):
+class {{ cookiecutter.project_slug }}(object):
     def __str__(self):
         return "Success"

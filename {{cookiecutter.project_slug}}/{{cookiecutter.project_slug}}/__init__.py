@@ -8,4 +8,4 @@ __author__ = '{{ cookiecutter.full_name }}'
 __email__ = '{{ cookiecutter.email }}'
 __version__ = '{{ cookiecutter.version }}'
 
-from .{{ cookiecutter.repo_name }} import {{ cookiecutter.repo_name }}
+from .{{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}

@@ -20,7 +20,7 @@ sphinx.environment.BuildEnvironment.warn_node = _warn_node(
 
 sys.path.insert(0, abspath(relpath('../', __file__)))
 
-import {{ cookiecutter.repo_name }}
+import {{ cookiecutter.project_slug }}
 
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.coverage',
@@ -37,9 +37,9 @@ master_doc = 'index'
 # General information about the project.
 project = u'{{ cookiecutter.project_name }}'
 copyright = u'{{ cookiecutter.year }}, {{ cookiecutter.full_name }}'
-author = {{ cookiecutter.repo_name }}.__author__
-version = {{ cookiecutter.repo_name }}.__version__
-release = {{ cookiecutter.repo_name }}.__version__
+author = {{ cookiecutter.project_slug }}.__author__
+version = {{ cookiecutter.project_slug }}.__version__
+release = {{ cookiecutter.project_slug }}.__version__
 
 #language = None
 #today = ''
@@ -75,7 +75,7 @@ html_static_path = ['_static']
 #html_show_copyright = True
 #html_use_opensearch = ''
 #html_file_suffix = None
-htmlhelp_basename = '{{ cookiecutter.repo_name }}doc'
+htmlhelp_basename = '{{ cookiecutter.project_slug }}doc'
 
 
 # -- Options for LaTeX output ------------------------------------------
@@ -86,7 +86,7 @@ latex_elements = {}
     #'preamble': '',
 
 latex_documents = [
-    ('index', '{{ cookiecutter.repo_name }}.tex',
+    ('index', '{{ cookiecutter.project_slug }}.tex',
      u'{{ cookiecutter.project_name }} Documentation',
      u'{{ cookiecutter.full_name }}', 'manual'),
 ]
@@ -101,7 +101,7 @@ latex_documents = [
 # -- Options for manual page output ------------------------------------
 
 man_pages = [
-    ('index', '{{ cookiecutter.repo_name }}',
+    ('index', '{{ cookiecutter.project_slug }}',
      u'{{ cookiecutter.project_name }} Documentation',
      [u'{{ cookiecutter.full_name }}'], 1)
 ]
@@ -110,10 +110,10 @@ man_pages = [
 # -- Options for Texinfo output ----------------------------------------
 
 texinfo_documents = [
-    ('index', '{{ cookiecutter.repo_name }}',
+    ('index', '{{ cookiecutter.project_slug }}',
      u'{{ cookiecutter.project_name }} Documentation',
      u'{{ cookiecutter.full_name }}',
-     '{{ cookiecutter.repo_name }}',
+     '{{ cookiecutter.project_slug }}',
      'One line description of project.',
      'Miscellaneous'),
 ]
