@@ -22,7 +22,7 @@ env:
 # command to run tests, e.g. python setup.py test
 script:
   - tox -e $TOXENV
-  - coverage run --source={{ cookiecutter.repo_name }} setup.py test
+  - coverage run --source={{ cookiecutter.project_slug }} setup.py test
 
 after_success:
   - coveralls
