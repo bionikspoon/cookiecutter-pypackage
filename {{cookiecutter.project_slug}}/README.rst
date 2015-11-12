@@ -62,3 +62,13 @@ To use {{ cookiecutter.project_slug }} in a project:
 
     import {{ cookiecutter.project_slug }}
 
+Credits
+---------
+
+Tools used in rendering this package:
+
+*  Cookiecutter_
+*  `cookiecutter-pypackage`_
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
