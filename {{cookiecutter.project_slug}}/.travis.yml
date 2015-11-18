@@ -17,6 +17,7 @@ env:
   - TOXENV=py32
   - TOXENV=py33
   - TOXENV=py34
+  - TOXENV=py35
   - TOXENV=pypy
 
 # command to run tests, e.g. python setup.py test
