@@ -24,6 +24,7 @@ help:
 	@echo "release - package and upload a release"
 	@echo "dist - package"
 	@echo "install - install the package to the active Python's site-packages"
+	@echo "register - update pypi"
 
 clean: clean-build clean-pyc clean-test
 
@@ -61,9 +62,9 @@ coverage:
 	$(BROWSER) htmlcov/index.html
 
 docs:
-	rm -f docs/{{ cookiecutter.project_slug }}.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ {{ cookiecutter.project_slug }}
+	rm -f docs/source/{{ cookiecutter.project_slug }}.rst
+	rm -f docs/source/modules.rst
+	sphinx-apidoc  --no-toc --no-headings --private --module-first -o docs/source/ {{ cookiecutter.project_slug }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 
@@ -71,8 +72,7 @@ servedocs: docs
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 	$(BROWSER) docs/_build/html/index.html
 
-release: clean
-	python setup.py register
+release: clean register
 	python setup.py sdist upload
 	python setup.py bdist_wheel upload
 
@@ -83,3 +83,6 @@ dist: clean
 
 install: clean
 	python setup.py install
+
+register:
+	python setup.py register
