@@ -19,10 +19,13 @@ except ImportError:
 
 from setuptools.command.test import test as TestCommand
 
+<<<<<<< a5beebee9ff0245192fdb9a46e238c6ffa3bfda0
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
+=======
+>>>>>>> add pytest class in setup.py and cleanup
 
 class PyTest(TestCommand):
     def finalize_options(self):
@@ -32,14 +35,9 @@ class PyTest(TestCommand):
 
     def run_tests(self):
         import pytest
-
+        import sys
         errno = pytest.main(self.test_args)
         sys.exit(errno)
-
-
-_version_re = re.compile(r"(?<=^__version__ = \')[\w\.]+(?=\'$)", re.U | re.M)
-with open('{{ cookiecutter.project_slug }}/__init__.py', 'rb') as f:
-    version = _version_re.search(f.read().decode('utf-8')).group()
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -53,8 +51,7 @@ requirements = []
 # TODO: put package test requirements here
 test_requirements = ['pytest', 'mock']
 
-# @:off
-setup(
+setup(  # :off
     name='{{ cookiecutter.project_slug }}',
     version='{{ cookiecutter.version }}',
     description="{{ cookiecutter.project_short_description }}",
@@ -89,5 +86,4 @@ setup(
     ],
     test_suite='tests',
     tests_require=test_requirements
-)
-# @:on
+)  # :on

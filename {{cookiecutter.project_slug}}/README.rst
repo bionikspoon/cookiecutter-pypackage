@@ -63,7 +63,7 @@ To use {{ cookiecutter.project_slug }} in a project:
     import {{ cookiecutter.project_slug }}
 
 Credits
----------
+-------
 
 Tools used in rendering this package:
 
