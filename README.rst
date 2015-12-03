@@ -2,6 +2,9 @@
 cookiecutter-pypackage
 ======================
 
+.. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
+   :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
+
 Cookiecutter template for a Python package. See https://github.com/audreyr/cookiecutter.
 
 * Free software: MIT license
@@ -12,6 +15,7 @@ Cookiecutter template for a Python package. See https://github.com/audreyr/cooki
 * Works with ``git flow``
 * Improved layout for syncing index and readme.  DRY.
 
+* Bumpversion: Pre-configured version bumping with a single command
 
 Usage
 -----
@@ -24,8 +28,13 @@ Then:
 
 * Create a repo and put it there.
 * Add the repo to your Travis CI account.
+* Run the script `travis_pypi_setup.py` to encrypt your PyPI password in Travis config
+  and activate automated deployment on PyPI when you push a new tag to master branch.
 * Add the repo to your ReadTheDocs account + turn on the ReadTheDocs service hook.
-* Release your package the standard Python way. Here's a release checklist: https://gist.github.com/audreyr/5990987
+* Release your package the standard Python way. Here's a release checklist: 
+  https://gist.github.com/audreyr/5990987
+* (Optional) If you feel like pinning the requirements for your package, you can
+  add a `requirements.txt` that specifies packages and version numbers.
 
 Not Exactly What You Want?
 --------------------------
@@ -34,6 +43,14 @@ Don't worry, you have options:
 
 Similar Cookiecutter Templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Nekroze/cookiecutter-pypackage`_: A fork of this with a PyTest test runner,
+  strict flake8 checking with Travis/Tox, and some docs and `setup.py` differences.
+  
+* `tony/cookiecutter-pypackage-pythonic`_: Fork with py2.7+3.3 optimizations. 
+  Flask/Werkzeug-style test runner, ``_compat`` module and module/doc conventions.
+  See ``README.rst`` or the `github comparison view`_ for exhaustive list of 
+  additions and modifications.
 
 * Also see the `network`_ and `family tree`_ for this repo. (If you find
   anything that should be listed here, please add it and send a pull request!)
@@ -63,7 +80,7 @@ make my own packaging experience better.
 .. _Sphinx: http://sphinx-doc.org/
 .. _ReadTheDocs: https://readthedocs.org/
 .. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
-.. _`tony/cookiecutter-pypackage`: https://github.com/tony/cookiecutter-pypackage
-.. _github comparison view: https://github.com/tony/cookiecutter-pypackage/compare/audreyr:master...master
+.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
+.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
 .. _`network`: https://github.com/audreyr/cookiecutter-pypackage/network
 .. _`family tree`: https://github.com/audreyr/cookiecutter-pypackage/network/members

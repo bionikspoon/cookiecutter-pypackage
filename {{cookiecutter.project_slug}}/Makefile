@@ -1,4 +1,15 @@
 .PHONY: clean-pyc clean-build docs clean
+define BROWSER_PYSCRIPT
+import os, webbrowser, sys
+try:
+	from urllib import pathname2url
+except:
+	from urllib.request import pathname2url
+
+webbrowser.open("file://" + pathname2url(os.path.abspath(sys.argv[1])))
+endef
+export BROWSER_PYSCRIPT
+BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
 help:
 	@echo "clean - remove all build, test, coverage and Python artifacts"
@@ -36,7 +47,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 {{ cookiecutter.repo_name }} tests
+	flake8 {{ cookiecutter.project_slug }} tests
 
 test:
 	python setup.py test
@@ -45,26 +56,30 @@ test-all:
 	tox
 
 coverage:
+	coverage run --source {{ cookiecutter.project_slug }} setup.py test
 	coverage report -m
 	coverage html
-	xdg-open htmlcov/index.html
+	$(BROWSER) htmlcov/index.html
 	$(MAKE) -C docs coverage
 
 docs:
-	rm -f docs/source/{{ cookiecutter.repo_name }}.rst
+	rm -f docs/source/{{ cookiecutter.project_slug }}.rst
 	rm -f docs/source/modules.rst
-	sphinx-apidoc  --no-toc --no-headings --private --module-first -o docs/source/ {{ cookiecutter.repo_name }}
+	sphinx-apidoc -o docs/source/ {{ cookiecutter.project_slug }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
-	xdg-open docs/build/html/index.html
+	$(BROWSER) docs/build/html/index.html
 
-release: clean register
+servedocs: docs
+	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
+
+release: clean
 	python setup.py sdist upload
 	python setup.py bdist_wheel upload
 
 dist: clean
 	python setup.py sdist
-	python setup.py bdist_wheel upload
+	python setup.py bdist_wheel
 	ls -l dist
 
 install: clean
