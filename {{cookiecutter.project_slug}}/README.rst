@@ -34,33 +34,6 @@ Features
 
 * TODO
 
-Installation
-------------
-
-At the command line either via easy_install or pip:
-
-.. code-block:: shell
-
-    $ pip install {{ cookiecutter.project_slug }}
-
-.. code-block:: shell
-
-    $ easy_install {{ cookiecutter.project_slug }}
-
-**Uninstall**
-
-.. code-block:: shell
-
-    $ pip uninstall {{ cookiecutter.project_slug }}
-
-
-Getting Started
----------------
-To use {{ cookiecutter.project_slug }} in a project:
-
-.. code-block:: python
-
-    import {{ cookiecutter.project_slug }}
 
 Credits
 -------
@@ -68,7 +41,8 @@ Credits
 Tools used in rendering this package:
 
 *  Cookiecutter_
-*  `cookiecutter-pypackage`_
+*  `bionikspoon/cookiecutter-pypackage`_ forked from `audreyr/cookiecutter-pypackage`_
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _`bionikspoon/cookiecutter-pypackage`: https://github.com/bionikspoon/cookiecutter-pypackage
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
