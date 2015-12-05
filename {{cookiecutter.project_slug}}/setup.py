@@ -30,18 +30,11 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read().replace('.. :changelog:', '')
 
-requirements = [
+# TODO: put package requirements here
+requirements = []
 
-    # TODO: put package requirements here
-
-]
-
-test_requirements = [
-
-    # TODO: put package test requirements here
-    'pytest', 'mock'
-
-]
+# TODO: put package test requirements here
+test_requirements = ['pytest', 'mock']
 
 setup(  # :off
     name='{{ cookiecutter.project_slug }}',
@@ -51,11 +44,8 @@ setup(  # :off
     author="{{ cookiecutter.full_name }}",
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    packages=[
-        '{{ cookiecutter.project_slug }}',
-    ],
-    package_dir={'{{ cookiecutter.project_slug }}':
-                 '{{ cookiecutter.project_slug }}'},
+    packages=['{{ cookiecutter.project_slug }}',],
+    package_dir={'{{ cookiecutter.project_slug }}':'{{ cookiecutter.project_slug }}'},
     include_package_data=True,
     install_requires=requirements,
     license="MIT",

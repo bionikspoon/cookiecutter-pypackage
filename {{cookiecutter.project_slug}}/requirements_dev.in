@@ -1,0 +1,13 @@
+bumpversion
+wheel
+flake8
+tox
+coverage
+Sphinx
+pip-tools
+watchdog
+
+{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
+# required by `travis_pypi_setup.py`
+cryptography
+PyYAML{% endif %}

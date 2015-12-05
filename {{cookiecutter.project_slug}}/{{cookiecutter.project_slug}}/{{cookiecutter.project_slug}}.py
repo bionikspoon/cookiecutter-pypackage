@@ -6,4 +6,4 @@
 
 class {{ cookiecutter.project_slug }}(object):
     def __str__(self):
-        return "Success"
+        return 'Success'
