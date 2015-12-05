@@ -4,11 +4,11 @@
 language: python
 
 python:
-  - "2.7"
+  - "3.5"
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
-  - pip install -U tox --use-mirrors
+  - pip install tox
   - pip install coveralls
 
 env:

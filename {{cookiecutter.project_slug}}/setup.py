@@ -19,13 +19,9 @@ except ImportError:
 
 from setuptools.command.test import test as TestCommand
 
-<<<<<<< a5beebee9ff0245192fdb9a46e238c6ffa3bfda0
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
-
-=======
->>>>>>> add pytest class in setup.py and cleanup
 
 class PyTest(TestCommand):
     def finalize_options(self):
@@ -59,11 +55,8 @@ setup(  # :off
     author="{{ cookiecutter.full_name }}",
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    packages=[
-        '{{ cookiecutter.project_slug }}',
-    ],
-    package_dir={'{{ cookiecutter.project_slug }}':
-                 '{{ cookiecutter.project_slug }}'},
+    packages=['{{ cookiecutter.project_slug }}',],
+    package_dir={'{{ cookiecutter.project_slug }}':'{{ cookiecutter.project_slug }}'},
     include_package_data=True,
     install_requires=requirements,
     license="MIT",
