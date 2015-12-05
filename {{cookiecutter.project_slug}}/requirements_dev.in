@@ -1,0 +1,12 @@
+bumpversion
+wheel
+flake8
+tox
+coverage
+Sphinx
+pip-tools
+watchdog
+{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
+cryptography
+PyYAML
+{% endif %}

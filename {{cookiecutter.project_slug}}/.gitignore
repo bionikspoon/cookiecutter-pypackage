@@ -55,10 +55,13 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
-
 docs/build/
 
 # Pycharm
 .idea/
+
 # PyBuilder
 target/
+
+# pip wheels
+wheelhouse/
