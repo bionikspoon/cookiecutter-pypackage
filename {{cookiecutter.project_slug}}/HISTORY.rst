@@ -6,7 +6,7 @@ History
 
 Next Release
 ------------
-* TODO
+* Coming Soon
 
 {{ cookiecutter.version }} ({{ cookiecutter.release_date }})
 ------------------

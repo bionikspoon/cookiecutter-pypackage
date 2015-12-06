@@ -1,4 +1,12 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
+"""
+==============
+{{ cookiecutter.project_slug }}
+==============
+
+{{ cookiecutter.project_short_description }}
+
+"""
 
 __author__ = '{{ cookiecutter.full_name }}'
 __email__ = '{{ cookiecutter.email }}'

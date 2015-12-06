@@ -15,24 +15,23 @@
     :alt: Build Status
 
 .. image:: https://coveralls.io/repos/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/badge.svg?branch=develop
-    :target: https://coveralls.io/r/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}?branch=develop
+    :target: https://coveralls.io/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}?branch=develophttps://coveralls.io/github
     :alt: Coverage Status
 
 .. image:: https://readthedocs.org/projects/{{ cookiecutter.project_slug }}/badge/?version=develop
-    :target: http://{{ cookiecutter.project_slug }}.readthedocs.org/en/develop/?badge=develop
+    :target: https://{{ cookiecutter.project_slug }}.readthedocs.org/en/develop/?badge=develop
     :alt: Documentation Status
 
 
 
 {{ cookiecutter.project_short_description}}
 
-* Free software: MIT license
-* Documentation: https://{{ cookiecutter.project_slug }}.readthedocs.org.
 
 Features
 --------
 
-* TODO
+* Free software: MIT license
+* Documentation: https://{{ cookiecutter.project_slug }}.readthedocs.org.
 
 
 Credits
