@@ -1,13 +1,31 @@
+# GIT UTILITIES
+# -------------------------------------
 bumpversion
+
+# PIP UTILITIES
+# -------------------------------------
 wheel
+pip-tools
+
+# LINT UTILITIES
+# -------------------------------------
 flake8
+
+# TEST UTILITIES
+# -------------------------------------
 tox
 coverage
-Sphinx
-pip-tools
-watchdog
 
+# DOC UTILITIES
+# -------------------------------------
+sphinx
+watchdog
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
+# DIST UTILITIES
+# -------------------------------------
 # required by `travis_pypi_setup.py`
 cryptography
 PyYAML{% endif %}
+
+# DEV UTILITIES (Your stuff here)
+# -------------------------------------
