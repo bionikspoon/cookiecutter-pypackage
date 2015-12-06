@@ -46,9 +46,9 @@ test_requirements = ['pytest', 'mock']
 setup(  # :off
     name='{{ cookiecutter.project_slug }}',
     version='{{ cookiecutter.version }}',
-    description="{{ cookiecutter.project_short_description }}",
-    long_description=readme + '\n\n' + __doc__ + '\n\n' + history,
-    author="{{ cookiecutter.full_name }}",
+    description='{{ cookiecutter.project_short_description }}',
+    long_description='\n\n'.join([__doc__, readme, history]),
+    author='{{ cookiecutter.full_name }}',
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
     packages=['{{ cookiecutter.project_slug }}',],
