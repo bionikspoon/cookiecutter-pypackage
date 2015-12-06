@@ -15,7 +15,7 @@
     :alt: Build Status
 
 .. image:: https://coveralls.io/repos/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/badge.svg?branch=develop
-    :target: https://coveralls.io/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}?branch=develophttps://coveralls.io/github
+    :target: https://coveralls.io/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}?branch=develop&service=github
     :alt: Coverage Status
 
 .. image:: https://readthedocs.org/projects/{{ cookiecutter.project_slug }}/badge/?version=develop

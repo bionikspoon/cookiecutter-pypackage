@@ -101,6 +101,5 @@ requirements:
 	pip-compile requirements.in > /dev/null
 	pip-sync requirements_dev.txt > /dev/null
 	pip install --quiet -r requirements.txt
-	python setup.py install --quiet > /dev/null
 	pip wheel --quiet -r requirements_dev.txt
 	pip wheel --quiet -r requirements.txt
