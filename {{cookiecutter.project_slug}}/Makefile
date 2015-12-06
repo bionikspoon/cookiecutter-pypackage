@@ -9,7 +9,10 @@ except:
 webbrowser.open("file://" + pathname2url(os.path.abspath(sys.argv[1])))
 endef
 export BROWSER_PYSCRIPT
-BROWSER := python -c "$$BROWSER_PYSCRIPT"
+
+BROWSER 		:= python -c "$$BROWSER_PYSCRIPT"
+DOCSBUILDDIR	= docs/_build
+DOCSSOURCEDIR	= docs/source
 
 help:
 	@echo "clean			remove all build, test, coverage and Python artifacts"
@@ -32,11 +35,11 @@ help:
 clean: clean-build clean-pyc clean-test
 
 clean-build:
-	rm -fr build/
+	rm -fr $(DOCSBUILDDIR)/
 	rm -fr dist/
 	rm -fr .eggs/
 	find . -name '*.egg-info' -exec rm -fr {} +
-	find . -name '*.egg' -exec rm -f {} +
+	find . -name '*.egg' -exec rm -fr {} +
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
@@ -50,8 +53,8 @@ clean-test:
 	rm -fr htmlcov/
 
 clean-docs:
-	rm -f docs/source/lanyrd.rst
-	rm -f docs/source/modules.rst
+	rm -f $(DOCSSOURCEDIR)/lanyrd.rst
+	rm -f $(DOCSSOURCEDIR)/modules.rst
 	$(MAKE) -C docs clean
 
 lint:
@@ -70,9 +73,8 @@ coverage:
 	$(BROWSER) htmlcov/index.html
 
 docs: clean-docs
-	sphinx-apidoc -o docs/source/ {{ cookiecutter.project_slug }}
+	sphinx-apidoc -o $(DOCSSOURCEDIR)/ {{ cookiecutter.project_slug }}
 	$(MAKE) -C docs html
-
 
 servedocs: docs
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
@@ -96,6 +98,9 @@ register:
 requirements:
 	pip install --quiet pip-tools
 	pip-compile requirements_dev.in > /dev/null
+	pip-compile requirements.in > /dev/null
 	pip-sync requirements_dev.txt > /dev/null
+	pip install --quiet -r requirements.txt
 	python setup.py install --quiet > /dev/null
 	pip wheel --quiet -r requirements_dev.txt
+	pip wheel --quiet -r requirements.txt
