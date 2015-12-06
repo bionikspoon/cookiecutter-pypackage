@@ -1,4 +1,13 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# coding=utf-8
+"""
+==============
+{{ cookiecutter.project_slug }}
+==============
+
+{{ cookiecutter.project_short_description }}
+
+"""
 
 __author__ = '{{ cookiecutter.full_name }}'
 __email__ = '{{ cookiecutter.email }}'

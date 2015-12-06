@@ -14,11 +14,11 @@ install:
 env:
   - TOXENV=py26
   - TOXENV=py27
-  - TOXENV=py32
   - TOXENV=py33
   - TOXENV=py34
   - TOXENV=py35
   - TOXENV=pypy
+  - TOXENV=docs
 
 # command to run tests, e.g. python setup.py test
 script:
@@ -40,5 +40,5 @@ deploy:
   on:
     tags: true
     repo: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-    condition: $TOXENV == py27
+    condition: $TOXENV == py34
 {%- endif %}
