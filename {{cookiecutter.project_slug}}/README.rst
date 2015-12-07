@@ -2,6 +2,10 @@
 {{ cookiecutter.project_name }}
 ===============================
 
+.. image:: https://img.shields.io/github/downloads/bionikspoon/Hangman/total.svg
+    :target: https://github.com/bionikspoon/Hangman
+    :alt: Github Downloads
+
 .. image:: https://badge.fury.io/py/{{ cookiecutter.project_slug }}.svg
     :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}/
     :alt: Latest Version
