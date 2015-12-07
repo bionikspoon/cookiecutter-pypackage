@@ -2,8 +2,8 @@
 {{ cookiecutter.project_name }}
 ===============================
 
-.. image:: https://img.shields.io/github/downloads/bionikspoon/Hangman/total.svg
-    :target: https://github.com/bionikspoon/Hangman
+.. image:: https://img.shields.io/github/downloads/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/total.svg
+    :target: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
     :alt: Github Downloads
 
 .. image:: https://badge.fury.io/py/{{ cookiecutter.project_slug }}.svg
