@@ -53,7 +53,7 @@ clean-test:
 	rm -fr htmlcov/
 
 clean-docs:
-	rm -f $(DOCSSOURCEDIR)/lanyrd.rst
+	rm -f $(DOCSSOURCEDIR)/{{ cookiecutter.project_slug }}.rst
 	rm -f $(DOCSSOURCEDIR)/modules.rst
 	$(MAKE) -C docs clean
 
@@ -73,7 +73,8 @@ coverage:
 	$(BROWSER) htmlcov/index.html
 
 docs: clean-docs
-	sphinx-apidoc -o $(DOCSSOURCEDIR)/ {{ cookiecutter.project_slug }}
+	# -P include private; -M modules first (before submodules); -T No TOC
+	sphinx-apidoc -PMT --output-dir=$(DOCSSOURCEDIR)/ {{ cookiecutter.project_slug }}
 	$(MAKE) -C docs html
 
 servedocs: docs
