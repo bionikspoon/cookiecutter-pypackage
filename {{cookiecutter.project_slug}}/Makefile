@@ -1,4 +1,4 @@
-.PHONY: clean clean-build clean-pyc clean-test clean-docs lint test test-all coverage coverage docs servedocs release dist install register requirements
+.PHONY: clean clean-build clean-pyc clean-test clean-docs lint test test-all coverage coverage  readme docs builddocs servedocs release dist install register requirements
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 try:
@@ -24,6 +24,7 @@ help:
 	@echo "test        		run tests quickly with the default Python"
 	@echo "test-all    		run tests on every Python version with tox"
 	@echo "coverage    		check code coverage quickly with the default Python"
+	@echo "readme      		generate github's README"
 	@echo "docs        		generate Sphinx HTML documentation, including API docs"
 	@echo "servedocs   		semi-live edit docs"
 	@echo "release     		package and upload a release"
@@ -68,19 +69,34 @@ test-all: lint
 
 coverage:
 	coverage run --source {{ cookiecutter.project_slug }} setup.py test
-	coverage report -m
+	coverage report --show-missing
 	coverage html
 	$(BROWSER) htmlcov/index.html
 	$(MAKE) -C docs coverage
 
-docs: clean-docs
-	# -P include private; -M modules first (before submodules); -T No TOC
-	sphinx-apidoc -PMT --output-dir=$(DOCSSOURCEDIR)/ {{ cookiecutter.project_slug }}
+readme:
+	python3 docs/github_readme.py
+
+builddocs:
+	sphinx-apidoc \
+		--private \
+		--no-toc \
+		--module-first \
+		--no-headings \
+		--output-dir=$(DOCSSOURCEDIR)/ cache_requests
 	$(MAKE) -C docs html
-	$(BROWSER) $(DOCSBUILDDIR)/html/index.html
+
+
+docs: clean-docs builddocs readme
 
 servedocs: docs
-	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
+	$(BROWSER) $(DOCSBUILDDIR)/html/index.html
+	watchmedo shell-command \
+		--pattern '*.rst;*.py' \
+		--command '$(MAKE) builddocs' \
+		--ignore-pattern '$(DOCSBUILDDIR)/*;$(DOCSSOURCEDIR)/{{ cookiecutter.project_slug }}.rst' \
+		--ignore-directories \
+		--recursive
 
 release: clean docs
 	python setup.py sdist upload
@@ -98,11 +114,11 @@ register:
 	python setup.py register
 
 requirements:
-	pip install --quiet pip-tools
+	pip install --quiet --upgrade setuptools pip wheel pip-tools
 	pip-compile requirements_dev.in > /dev/null
 	pip-compile requirements.in > /dev/null
 	pip-sync requirements_dev.txt > /dev/null
 	pip install --quiet -r requirements.txt
 	pip wheel --quiet -r requirements_dev.txt
 	pip wheel --quiet -r requirements.txt
-	git diff --word-diff requirements.txt requirements_dev.txt &> .requirements.diff
+	git diff --word-diff requirements.txt requirements_dev.txt 2>&1 | tee .requirements.diff
