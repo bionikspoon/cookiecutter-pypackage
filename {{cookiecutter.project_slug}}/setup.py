@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 """
-=============
-Documentation
-=============
-
 The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org.
 """
 
@@ -51,7 +47,7 @@ setup(  # :off
     name='{{ cookiecutter.project_slug }}',
     version='{{ cookiecutter.version }}',
     description='{{ cookiecutter.project_short_description }}',
-    long_description='\n\n'.join([readme, __doc__, history]),
+    long_description='\n\n'.join([readme, history]),
     author='{{ cookiecutter.full_name }}',
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',

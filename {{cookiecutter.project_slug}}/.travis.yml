@@ -6,10 +6,8 @@ language: python
 python:
   - "3.5"
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
-  - pip install tox
-  - pip install coveralls
+  - pip install tox coveralls
 
 env:
   - TOXENV=py26
