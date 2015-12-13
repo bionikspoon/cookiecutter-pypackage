@@ -10,4 +10,6 @@ install:
     - pip install cookiecutter
 
 script:
-  - tox
+    - cookiecutter . --no-input
+    - python3 ./python_boilerplate/docs/github_readme.py
+    - cd ./python_boilerplate && python setup.py test
