@@ -1,14 +1,15 @@
 language: python
 
 python:
-  - "3.5"
-  - "3.4"
-  - "2.7"
-  - "pypy"
+    - "3.5"
+    - "3.4"
+    - "2.7"
+    - "pypy"
 
 install:
-  - pip install cookiecutter
+    - pip install cookiecutter
 
 script:
-  - cookiecutter . --no-input
-  - cd ./python_boilerplate && python setup.py test
+    - cookiecutter . --no-input
+    - python3 ./python_boilerplate/docs/github_readme.py
+    - cd ./python_boilerplate && python setup.py test
