@@ -1,4 +1,4 @@
-.PHONY: clean clean-build clean-pyc clean-test clean-docs lint test test-all coverage coverage  readme docs builddocs servedocs release dist install register requirements
+.PHONY: clean clean-build clean-pyc clean-test clean-docs lint test test-all coverage coverage readme docs builddocs servedocs release dist install register requirements
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 try:
@@ -76,6 +76,8 @@ coverage:
 readme:
 	python3 docs/github_readme.py
 
+docs: clean-docs builddocs readme
+
 builddocs:
 	sphinx-apidoc \
 		--private \
@@ -84,9 +86,6 @@ builddocs:
 		--no-headings \
 		--output-dir=$(DOCSSOURCEDIR)/ cache_requests
 	$(MAKE) -C docs html
-
-
-docs: clean-docs builddocs readme
 
 servedocs: docs
 	$(BROWSER) $(DOCSBUILDDIR)/html/index.html
