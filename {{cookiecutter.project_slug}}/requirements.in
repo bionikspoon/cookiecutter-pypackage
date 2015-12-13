@@ -1,2 +1,4 @@
 # PROJECT REQUIREMENTS (Your stuff here)
 # -------------------------------------
+pytest
+mock

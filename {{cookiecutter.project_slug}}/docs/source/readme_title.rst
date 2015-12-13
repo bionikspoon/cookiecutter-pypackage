@@ -1,3 +1,5 @@
+:orphan:
+
 ===============================
 {{ cookiecutter.project_name }}
 ===============================
@@ -27,25 +29,4 @@
     :alt: Documentation Status
 
 
-
 {{ cookiecutter.project_short_description}}
-
-
-Features
---------
-
-* Free software: MIT license
-* Documentation: https://{{ cookiecutter.project_slug }}.readthedocs.org.
-
-
-Credits
--------
-
-Tools used in rendering this package:
-
-*  Cookiecutter_
-*  `bionikspoon/cookiecutter-pypackage`_ forked from `audreyr/cookiecutter-pypackage`_
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`bionikspoon/cookiecutter-pypackage`: https://github.com/bionikspoon/cookiecutter-pypackage
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
