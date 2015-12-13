@@ -11,5 +11,5 @@ install:
 
 script:
     - cookiecutter . --no-input
-    - cd ./python_boilerplate && $(make) readme
+    - python3 ./python_boilerplate/docs/github_readme.py
     - cd ./python_boilerplate && python setup.py test
