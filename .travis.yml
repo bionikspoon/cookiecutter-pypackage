@@ -1,15 +1,13 @@
 language: python
 
-python: 3.4
-env:
-  - TOXENV=py27
-  - TOXENV=py33
-  - TOXENV=py34
-  - TOXENV=py35
-  - TOXENV=pypy
+python:
+    - "3.5"
+    - "3.4"
+    - "2.7"
+    - "pypy"
 
 install:
-  - pip install -U tox
+    - pip install cookiecutter
 
 script:
   - tox
