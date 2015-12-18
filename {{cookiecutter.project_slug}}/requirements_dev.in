@@ -22,12 +22,14 @@ mock
 # -------------------------------------
 sphinx
 watchdog
+
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
 # DIST UTILITIES
 # -------------------------------------
 # required by `travis_pypi_setup.py`
 cryptography
-PyYAML{% endif %}
+PyYAML
+{% endif %}
 
 # DEV UTILITIES (Your stuff here)
 # -------------------------------------

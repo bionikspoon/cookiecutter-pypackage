@@ -1,9 +1,10 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 """
 {{ cookiecutter.project_slug }}
 """
+from __future__ import absolute_import
 
 
-class {{ cookiecutter.project_slug }}(object):
+class Boilerlate(object):
     def __str__(self):
         return 'Success'
