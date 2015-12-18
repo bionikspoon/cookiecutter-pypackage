@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding=utf-8
-"""The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org."""
+"""
+The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org.
+"""
+
+import os
+import sys
+import re
 
 try:
     from setuptools import setup
@@ -9,6 +15,9 @@ except ImportError:
 
 from setuptools.command.test import test as TestCommand
 
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    sys.exit()
 
 class PyTest(TestCommand):
     def finalize_options(self):
@@ -51,7 +60,7 @@ setup(  # :off
     license='MIT',
     zip_safe=False,
     cmdclass={'test': PyTest},
-    keywords='{{ cookiecutter.project_slug }}',
+    keywords='{{ cookiecutter.project_slug }} {{ cookiecutter.full_name }}',
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
@@ -62,6 +71,7 @@ setup(  # :off
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',

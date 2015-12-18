@@ -8,7 +8,15 @@
 {{ cookiecutter.project_short_description }}
 
 """
+from __future__ import absolute_import
+import logging
+
+from ._compat import NullHandler
+
+logging.getLogger(__name__).addHandler(NullHandler())
 
 __author__ = '{{ cookiecutter.full_name }}'
 __email__ = '{{ cookiecutter.email }}'
 __version__ = '{{ cookiecutter.version }}'
+
+from .{{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
