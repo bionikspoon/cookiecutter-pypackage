@@ -16,7 +16,7 @@ Features
 * Free software: MIT license
 * Vanilla testing setup with ``pytest`` and `python setup.py test`
 * Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 2.6, 2.7, 3.3, 3.4, 3.5
+* Tox_ testing: Setup to easily test for Python 2.6, 2.7, 3.3, 3.4, 3.5, and PyPY
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Bumpversion: Pre-configured version bumping with a single command
 * Auto-release to PyPI when you push a new tag to master (optional)
@@ -28,7 +28,7 @@ Quickstart
 
 Generate a Python package project::
 
-    cookiecutter https://github.com/bionikspoon/cookiecutter-pypackage.git
+    cookiecutter https://github.com/bionikspoon/cookiecutter-pypackage
 
 Then:
 
