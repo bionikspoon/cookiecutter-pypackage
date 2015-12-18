@@ -7,7 +7,7 @@ cookiecutter-pypackage
 
 Cookiecutter_ template for a Python package.
 
-* GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
+* GitHub repo: https://github.com/bionikspoon/cookiecutter-pypackage/
 
 Features
 --------
@@ -61,7 +61,7 @@ Similar Cookiecutter Templates
   Flask/Werkzeug-style test runner, ``_compat`` module and module/doc conventions.
   See ``README.rst`` or the `github comparison view`_ for exhaustive list of
   additions and modifications.
-  
+
 * `ardydedase/cookiecutter-pypackage`_: A fork with separate requirements files rather than a requirements list in the ``setup.py`` file.
 
 * Also see the `network`_ and `family tree`_ for this repo. (If you find
