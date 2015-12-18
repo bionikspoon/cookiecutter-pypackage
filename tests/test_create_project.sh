@@ -18,7 +18,7 @@ echo "Running test script..."
 cookiecutter . --no-input
 (
     cd ./python_boilerplate
-    pip install -r requirements_dev.txt
+    python docs/github_docs.py
     python setup.py test
     python travis_pypi_setup.py --repo audreyr/cookiecutter-pypackage --password invalidpass
     python -c '''import yaml

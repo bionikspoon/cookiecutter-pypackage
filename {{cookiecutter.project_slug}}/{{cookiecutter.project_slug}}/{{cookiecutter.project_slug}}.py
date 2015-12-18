@@ -5,6 +5,6 @@
 from __future__ import absolute_import
 
 
-class Boilerlate(object):
+class Boilerplate(object):
     def __str__(self):
         return 'Success'
