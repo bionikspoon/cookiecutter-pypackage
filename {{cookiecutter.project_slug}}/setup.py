@@ -4,20 +4,12 @@
 The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org.
 """
 
-import os
-import sys
-import re
-
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
 from setuptools.command.test import test as TestCommand
-
-if sys.argv[-1] == 'publish':
-    os.system('python setup.py sdist upload')
-    sys.exit()
 
 class PyTest(TestCommand):
     def finalize_options(self):
