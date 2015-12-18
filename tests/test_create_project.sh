@@ -18,8 +18,7 @@ echo "Running test script..."
 cookiecutter . --no-input
 (
     cd ./python_boilerplate
-    $(make) github
-    $(make) requirements
+    python docs/github_docs.py
     python setup.py test
     python travis_pypi_setup.py --repo audreyr/cookiecutter-pypackage --password invalidpass
     python -c '''import yaml

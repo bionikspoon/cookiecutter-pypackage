@@ -104,7 +104,7 @@ def update_travis_deploy_password(encrypted_password):
 def main(args):
     public_key = fetch_public_key(args.repo)
     password = args.password or getpass('PyPI password: ')
-    update_travis_deploy_password(encrypt(public_key, password).encode())
+    update_travis_deploy_password(encrypt(public_key, password.encode()))
     print("Wrote encrypted password to .travis.yml -- you're ready to deploy")
 
 
