@@ -22,6 +22,7 @@ mock
 # -------------------------------------
 sphinx
 watchdog
+restructuredtext_lint
 
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
 # DIST UTILITIES

@@ -1,0 +1,31 @@
+; vi:syntax=ini
+; See https://coverage.readthedocs.org/en/coverage-4.0.3/config.html
+
+[run]
+data_file = .coverage
+source =
+    {{ cookiecutter.project_slug }}
+
+; debug = config
+; branch = False
+; include =
+;    {{ cookiecutter.project_slug }}/
+; omit =
+;     tests/
+
+[report]
+fail_under = 80
+show_missing = True
+
+; exclude_lines =
+;     (?i)#\s*pragma[:\s]?\s*no\s*cover
+; include_errors = False
+; include =
+;     {{ cookiecutter.project_slug }}/
+; omit =
+;     tests/
+; skip_covered = False
+
+[html]
+directory = .htmlcov
+title = Hangman Coverage Report
