@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
-"""
-The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org.
-"""
+"""The full documentation is at https://{{ cookiecutter.project_slug }}.readthedocs.org."""
 
 try:
     from setuptools import setup
