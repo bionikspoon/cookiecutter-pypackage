@@ -4,10 +4,6 @@
 {{ cookiecutter.project_name }}
 ===============================
 
-.. image:: https://img.shields.io/github/downloads/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/total.svg
-    :target: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-    :alt: Github Downloads
-
 .. image:: https://badge.fury.io/py/{{ cookiecutter.project_slug }}.svg
     :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}/
     :alt: Latest Version

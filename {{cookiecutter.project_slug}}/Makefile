@@ -51,7 +51,7 @@ clean-pyc:
 clean-test:
 	rm -fr .tox/
 	rm -f .coverage
-	rm -fr htmlcov/
+	rm -fr .htmlcov/
 
 clean-docs:
 	rm -f $(DOCSSOURCEDIR)/{{ cookiecutter.project_slug }}.rst
@@ -68,23 +68,24 @@ test-all: lint
 	tox
 
 coverage:
-	coverage run --source {{ cookiecutter.project_slug }} setup.py test
-	coverage report --show-missing
+	coverage run {{ cookiecutter.project_slug }} setup.py test
+	coverage report
 	coverage html
-	$(BROWSER) htmlcov/index.html
+	$(BROWSER) .htmlcov/index.html
 	$(MAKE) -C docs coverage
 
 github:
 	python docs/github_docs.py
+	rst-lint README.rst
 
 docs: clean-docs builddocs github
 
 builddocs:
+	# add --no-headings if your adding them manually
 	sphinx-apidoc \
 		--private \
 		--no-toc \
 		--module-first \
-		--no-headings \
 		--output-dir=$(DOCSSOURCEDIR)/ {{ cookiecutter.project_slug }}
 	$(MAKE) -C docs html
 
