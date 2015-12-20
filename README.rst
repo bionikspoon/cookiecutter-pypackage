@@ -14,31 +14,31 @@ Cookiecutter_ template for a Python package.
 Notable Deviations from Upstream
 --------------------------------
 
-- pytest_!  Uses ``pytest`` with a ``setup.py`` test command.
+- pytest_!  Uses ``pytest`` with a ``setup.py`` test command. See: ``python setup.py test`` and ``make test``
 - git-flow_ friendly!  Subtle changes to improve git-flow workflow.
-- coveralls_! Preconfigured integration with coveralls, coverage report monitoring.
-- pip-tools_! Uses pip-tools for managing dependendencies.  See ``make requirements``.
-- Better requirements management. Project and dev requirements are seperated, and pip tools makes it easier to update and pin requirements.
-- PyPy_! Preconfigured to include PyPy.  This is usually free accessibility! It's easier to remove PyPy support then to add it. Try it out, see if PyPy passes your tests.
-- Better Tox_ + Travis-CI_ config. Tox should do the maximum amount of work, and travis the minimum.  This creates a more consistent environment for testing locally and remotely on Travis.
-- Inludes ``_compat`` module and logging boilerplate.
+- coveralls_! Preconfigured integration with coveralls--coverage report monitoring.
+- pip-tools_! Uses pip-tools for managing dependendencies.  See: ``make requirements``.
+- Better requirements management. Project and dev requirements are seperated, and pip-tools_ makes it easier to update and pin requirements.
+- PyPy_! Preconfigured to include PyPy.  This is usually free accessibility! Try it out! See if PyPy passes your tests.
+- Better Tox_ + Travis-CI_ setup.
 
+  Philosophy: Tox_ should do the maximum amount of work, and Travis-CI_ the minimum.  This creates a more consistent results when testing locally vs remotely on Travis-CI_.
+- Inludes ``_compat`` module and ``logging`` boilerplate.
 
+Massive overhaul to docs
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-..
+- Github readme is automatically generated from compiling doc sources, **reasoning:**
 
-- **Massive overhaul to docs.**
+  1. Sphinx specific RST doesn't render on github (ugly) and outright breaks PyPI_.  For example, if you use Sphinx' python domain references, it looks like this: :class:`MyAwesomeClass` or :py:class:`MyAwesomeClass` instead of ``MyAwesomeClass``
 
-  - Github readme is auto generated from compiling doc sources, reasoning:
+  2. Usually you want to include extra sections on the github README.  For example, I like to include installation instructions and a quick start guide. But I also like how things look on ReadTheDocs_, and don't want to mess that up.  The answer is they need to be combined using a different process.  This fork delivers a DRY and intuitive process to have both.
 
-    1. Sphinx specific RST doesn't render on github (ugly) and outright breaks PyPI.  For example, if you use Sphinx' python domain references, it looks like this: :class:`MyAwesomeClass` or :py:class:`MyAwesomeClass` instead of ``MyAwesomeClass``
-    2. Usually you want to include extra sections on the github README, like installation instructions and a quick start guide, but don't want to mess up the output on ReadTheDocs.  DRY demands a single source, this fork delivers.
+  See: ``make github`` and ``docs/github_docs.py``.  I wrote a minimalistic, text processing framework--it should be intuitive to extend and customize for your needs.
 
-    See ``make github`` and ``docs/github_docs.py``.  I wrote a minimalistic, text processing framework--it should be intuitive to extend and customize for your needs.
-
-  - Doc sources follow the nested format, adding clarity.
-  - Includes a doc linter to avoid PyPI's rst parser from breaking.
-  - A million times more badges.  Badges for everything! You get a badge, you get badge, and YOU get badge!!
+- Doc sources follow the nested format, adding clarity.
+- Includes a doc linter to avoid PyPI_'s RST parser from breaking.
+- A million times more badges, badges for everything! You get a badge, you get badge, and YOU get badge!!
 
 
 .. _pytest: http://pytest.org/latest/
@@ -54,7 +54,7 @@ Features
 - Tox_ testing: Setup to easily test for Python 2.6, 2.7, 3.3, 3.4, 3.5, and PyPy_
 - Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 - Bumpversion: Pre-configured version bumping with a single command
-- Auto-release to PyPI when you push a new tag to master (optional)
+- Auto-release to PyPI_ when you push a new tag to master (optional)
 
 .. _Travis-CI: http://travis-ci.org/
 .. _Tox: http://testrun.org/tox/
@@ -74,8 +74,8 @@ Then:
 
 - Create a repo and put it there.
 - Add the repo to your Travis CI account.
-- Run the script `travis_pypi_setup.py` to encrypt your PyPI password in Travis config
-  and activate automated deployment on PyPI when you push a new tag to master branch.
+- Run the script `travis_pypi_setup.py` to encrypt your PyPI_ password in Travis config
+  and activate automated deployment on PyPI_ when you push a new tag to master branch.
 - Add the repo to your ReadTheDocs account + turn on the ReadTheDocs service hook.
 - Release your package the standard Python way. Here's a release checklist:
   https://gist.github.com/audreyr/5990987
@@ -133,3 +133,6 @@ Or Submit a Pull Request
 
 I also accept pull requests on this, if they're small, atomic, and if they
 make my own packaging experience better.
+
+
+.. _PyPI: https://pypi.python.org/pypi
