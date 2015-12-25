@@ -21,7 +21,6 @@ Notable Deviations from Upstream
 - Better requirements management. Project and dev requirements are seperated, and pip-tools_ makes it easier to update and pin requirements.
 - PyPy_! Preconfigured to include PyPy.  This is usually free accessibility! Try it out! See if PyPy passes your tests.
 - Better Tox_ + Travis-CI_ setup.
-
   Philosophy: Tox_ should do the maximum amount of work, and Travis-CI_ the minimum.  This creates a more consistent results when testing locally vs remotely on Travis-CI_.
 - Inludes ``_compat`` module and ``logging`` boilerplate.
 
@@ -31,7 +30,6 @@ Massive overhaul to docs
 - Github readme is automatically generated from compiling doc sources, **reasoning:**
 
   1. Sphinx specific RST doesn't render on github (ugly) and outright breaks PyPI_.  For example, if you use Sphinx' python domain references, it looks like this: :class:`MyAwesomeClass` or :py:class:`MyAwesomeClass` instead of ``MyAwesomeClass``
-
   2. Usually you want to include extra sections on the github README.  For example, I like to include installation instructions and a quick start guide. But I also like how things look on ReadTheDocs_, and don't want to mess that up.  The answer is they need to be combined using a different process.  This fork delivers a DRY and intuitive process to have both.
 
   See: ``make github`` and ``docs/github_docs.py``.  I wrote a minimalistic, text processing framework--it should be intuitive to extend and customize for your needs.

@@ -68,7 +68,7 @@ test-all: lint
 	tox
 
 coverage:
-	coverage run {{ cookiecutter.project_slug }} setup.py test
+	coverage run setup.py test
 	coverage report
 	coverage html
 	$(BROWSER) .htmlcov/index.html
