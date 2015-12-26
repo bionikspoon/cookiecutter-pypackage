@@ -31,7 +31,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 # TODO: put package requirements here
-requirements = []
+requirements = ['six']
 
 # TODO: put package test requirements here
 test_requirements = ['pytest', 'mock']
