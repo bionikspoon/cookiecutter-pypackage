@@ -124,8 +124,8 @@ requirements:
 	pip-compile requirements_dev.in > /dev/null
 	pip-compile requirements.in > /dev/null
 	pip-sync requirements_dev.txt > /dev/null
-	pip wheel --quiet -r requirements_dev.txt
 	git diff requirements.txt requirements_dev.txt 2>&1 | tee .requirements.diff
 
 sync:
+	pip install --quiet --upgrade pip-tools
 	pip-sync requirements_dev.txt > /dev/null
