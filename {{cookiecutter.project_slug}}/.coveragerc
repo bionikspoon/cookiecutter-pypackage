@@ -14,18 +14,19 @@ source =
 ;     tests/
 
 [report]
-fail_under = 80
 show_missing = True
+
+; fail_under = 80
+; omit =
+;     {{ cookiecutter.project_slug }}/_compat.py
 
 ; exclude_lines =
 ;     (?i)#\s*pragma[:\s]?\s*no\s*cover
 ; include_errors = False
 ; include =
 ;     {{ cookiecutter.project_slug }}/
-; omit =
-;     tests/
 ; skip_covered = False
 
 [html]
 directory = .htmlcov
-title = Hangman Coverage Report
+title = {{ cookiecutter.project_slug }} Coverage Report
