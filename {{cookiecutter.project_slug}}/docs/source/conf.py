@@ -6,11 +6,11 @@ import sphinx.environment
 
 
 def _warn_node(func):
-    def wrapper(self, msg, node):
+    def wrapper(self, msg, node, **kwargs):
         if msg.startswith('nonlocal image URI found:'):
             return
 
-        return func(self, msg, node)
+        return func(self, msg, node, **kwargs)
 
     return wrapper
 

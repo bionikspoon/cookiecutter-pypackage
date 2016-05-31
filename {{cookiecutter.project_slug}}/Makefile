@@ -120,7 +120,8 @@ register:
 	python setup.py register
 
 requirements:
-	pip install --quiet --upgrade setuptools pip wheel pip-tools
+	pip install --quiet --upgrade pip==8.1.1
+	pip install --quiet --upgrade setuptools wheel pip-tools
 	pip-compile requirements_dev.in > /dev/null
 	pip-compile requirements.in > /dev/null
 	pip-sync requirements_dev.txt > /dev/null
