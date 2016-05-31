@@ -54,11 +54,6 @@ Features
 - Bumpversion: Pre-configured version bumping with a single command
 - Auto-release to PyPI_ when you push a new tag to master (optional)
 
-.. _Travis-CI: http://travis-ci.org/
-.. _Tox: http://testrun.org/tox/
-.. _PyPy: http://pypy.org/
-.. _Sphinx: http://sphinx-doc.org/
-.. _ReadTheDocs: https://readthedocs.org/
 
 
 Quickstart
@@ -72,11 +67,11 @@ Then:
 
 - Create a repo and put it there.
 - Add the repo to your Travis CI account.
+- Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
 - Run the script `travis_pypi_setup.py` to encrypt your PyPI_ password in Travis config
   and activate automated deployment on PyPI_ when you push a new tag to master branch.
 - Add the repo to your ReadTheDocs account + turn on the ReadTheDocs service hook.
-- Release your package the standard Python way. Here's a release checklist:
-  https://gist.github.com/audreyr/5990987
+- Release your package by pushing a new tag to master.
 - (Optional) If you feel like pinning the requirements for your package, you can
   add a `requirements.txt` that specifies packages and version numbers.
 
@@ -105,14 +100,6 @@ Similar Cookiecutter Templates
 - Also see the `network`_ and `family tree`_ for this repo. (If you find
   anything that should be listed here, please add it and send a pull request!)
 
-.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
-.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
-.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
-.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
-.. _`network`: https://github.com/audreyr/cookiecutter-pypackage/network
-.. _`family tree`: https://github.com/audreyr/cookiecutter-pypackage/network/members
-
-
 Fork This / Create Your Own
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -134,3 +121,14 @@ make my own packaging experience better.
 
 
 .. _PyPI: https://pypi.python.org/pypi
+.. _PyPy: https://pypy.org/
+.. _Travis-CI: https://travis-ci.org/
+.. _Tox: https://testrun.org/tox/
+.. _Sphinx: https://sphinx-doc.org/
+.. _ReadTheDocs: https://readthedocs.org/
+.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
+.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
+.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
+.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
+.. _`network`: https://github.com/audreyr/cookiecutter-pypackage/network
+.. _`family tree`: https://github.com/audreyr/cookiecutter-pypackage/network/members

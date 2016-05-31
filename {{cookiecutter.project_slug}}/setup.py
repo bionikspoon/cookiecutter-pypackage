@@ -36,7 +36,7 @@ requirements = ['six']
 # TODO: put package test requirements here
 test_requirements = ['pytest', 'mock']
 
-setup(  # :off
+setup(
     name='{{ cookiecutter.project_slug }}',
     version='{{ cookiecutter.version }}',
     description='{{ cookiecutter.project_short_description }}',
@@ -44,8 +44,8 @@ setup(  # :off
     author='{{ cookiecutter.full_name }}',
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    packages=['{{ cookiecutter.project_slug }}',],
-    package_dir={'{{ cookiecutter.project_slug }}':'{{ cookiecutter.project_slug }}'},
+    packages=['{{ cookiecutter.project_slug }}', ],
+    package_dir={'{{ cookiecutter.project_slug }}': '{{ cookiecutter.project_slug }}'},
     include_package_data=True,
     install_requires=requirements,
     license='MIT',
@@ -71,4 +71,4 @@ setup(  # :off
     ],
     test_suite='tests',
     tests_require=test_requirements
-)  # :on
+)
