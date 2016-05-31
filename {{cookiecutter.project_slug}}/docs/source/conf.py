@@ -6,11 +6,11 @@ import sphinx.environment
 
 
 def _warn_node(func):
-    def wrapper(self, msg, node):
+    def wrapper(self, msg, node, **kwargs):
         if msg.startswith('nonlocal image URI found:'):
             return
 
-        return func(self, msg, node)
+        return func(self, msg, node, **kwargs)
 
     return wrapper
 
@@ -81,13 +81,13 @@ latex_elements = {}
 # 'pointsize': '10pt',
 # 'preamble': '',
 
-latex_documents = [(  # :off
+latex_documents = [(
     'index',
     '{{ cookiecutter.project_slug }}.tex',
     '{{ cookiecutter.project_name }} Documentation',
     '{{ cookiecutter.full_name }}',
     'manual',
-)]  # :on
+)]
 
 # latex_logo = None
 # latex_use_parts = False
@@ -98,18 +98,18 @@ latex_documents = [(  # :off
 
 # -- Options for manual page output ------------------------------------
 
-man_pages = [(  # :off
+man_pages = [(
     'index',
     '{{ cookiecutter.project_slug }}',
     '{{ cookiecutter.project_name }} Documentation',
     ['{{ cookiecutter.full_name }}'],
     1
-)]  # :on
+)]
 # man_show_urls = False
 
 # -- Options for Texinfo output ----------------------------------------
 
-texinfo_documents = [(  # :off
+texinfo_documents = [(
     'index',
     '{{ cookiecutter.project_slug }}',
     '{{ cookiecutter.project_name }} Documentation',
@@ -117,7 +117,7 @@ texinfo_documents = [(  # :off
     '{{ cookiecutter.project_slug }}',
     'One line description of project.',
     'Miscellaneous'
-)]  # :on
+)]
 
 # texinfo_appendices = []
 # texinfo_domain_indices = True

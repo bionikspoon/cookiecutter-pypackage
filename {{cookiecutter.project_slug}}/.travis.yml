@@ -2,12 +2,13 @@
 # This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
+sudo: false
 
-python:
-  - "3.5"
+python: 3.5
 
 install:
-  - pip install tox coveralls
+  - pip install --upgrade pip==8.1.1
+  - pip install tox
 
 env:
   - TOXENV=py26
@@ -24,6 +25,7 @@ script:
   - coverage run setup.py test
 
 after_success:
+  - pip install coveralls
   - coveralls
 
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}

@@ -9,6 +9,7 @@ Tests for `{{ cookiecutter.project_slug }}` module.
 """
 from pytest import fixture
 
+
 @fixture
 def boilerplate():
     from {{ cookiecutter.project_slug }}.{{ cookiecutter.project_slug }} import Boilerplate

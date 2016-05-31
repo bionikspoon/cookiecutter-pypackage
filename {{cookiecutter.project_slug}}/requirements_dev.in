@@ -23,6 +23,7 @@ mock
 # DOC UTILITIES
 # -------------------------------------
 sphinx
+sphinx_rtd_theme
 watchdog
 restructuredtext_lint
 
@@ -36,4 +37,3 @@ PyYAML
 
 # DEV UTILITIES (Your stuff here)
 # -------------------------------------
-ipdb

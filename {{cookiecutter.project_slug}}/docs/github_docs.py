@@ -170,7 +170,6 @@ def rule__everything_else(lines):
     # add small rules here, or create a named rule.
 
     for line in lines:
-
         # remove orphan directive.
         if line.startswith(':orphan:'):
             continue

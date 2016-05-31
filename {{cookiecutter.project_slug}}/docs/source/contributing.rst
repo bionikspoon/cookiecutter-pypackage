@@ -112,3 +112,4 @@ Tips
 To run a subset of tests::
 
     $ py.test tests/test_{{ cookiecutter.project_slug }}.py
+
