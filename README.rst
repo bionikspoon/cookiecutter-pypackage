@@ -38,6 +38,8 @@ Massive overhaul to docs
 - Includes a doc linter to avoid PyPI_'s RST parser from breaking.
 - A million times more badges, badges for everything! You get a badge, you get badge, and YOU get badge!!
 
+  .. image:: https://i.imgflip.com/152ysz.jpg
+
 
 .. _pytest: http://pytest.org/latest/
 .. _git-flow: https://github.com/nvie/gitflow
